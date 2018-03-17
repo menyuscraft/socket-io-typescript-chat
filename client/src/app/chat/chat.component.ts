@@ -51,7 +51,7 @@ export class ChatComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     // subscribing to any changes in the list of items / messages
-    this.matListItems.changes.subscribe(elements => {
+    this.matListItems.changes.subscribe(() => {
       this.scrollToBottom();
     });
   }
@@ -66,7 +66,7 @@ export class ChatComponent implements OnInit, AfterViewInit {
   }
 
   private initModel(): void {
-    const randomId = this.getRandomId();
+    const randomId = ChatComponent.getRandomId();
     this.user = {
       id: randomId,
       avatar: `${AVATAR_URL}/${randomId}.png`
@@ -93,7 +93,7 @@ export class ChatComponent implements OnInit, AfterViewInit {
       });
   }
 
-  private getRandomId(): number {
+  private static getRandomId(): number {
     return Math.floor(Math.random() * (1000000)) + 1;
   }
 

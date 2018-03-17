@@ -1,6 +1,6 @@
 import { createServer, Server } from 'http';
 import * as express from 'express';
-import * as socketIo from 'socket.io';
+import * as SocketIO from 'socket.io';
 
 import { Message } from './model';
 
@@ -32,7 +32,7 @@ export class ChatServer {
     }
 
     private sockets(): void {
-        this.io = socketIo(this.server);
+        this.io = SocketIO(this.server);
     }
 
     private listen(): void {

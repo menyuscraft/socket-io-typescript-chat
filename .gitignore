@@ -4,6 +4,8 @@
 /server/node_modules
 /server/dist
 /server/npm-debug.log
+/server/src/*.js
+/server/src/model/*.js
 
 ## client
 # compiled output

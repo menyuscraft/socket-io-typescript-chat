@@ -110,7 +110,7 @@ export class ChatComponent implements OnInit, AfterViewInit {
   private openUserPopup(params): void {
     this.dialogRef = this.dialog.open(DialogUserComponent, params);
     this.dialogRef.afterClosed().subscribe(paramsDialog => {
-      if (!paramsDialog) {
+      if (!paramsDialog || paramsDialog.username === this.user.name) {
         return;
       }
 
